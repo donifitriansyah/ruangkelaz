@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INFORMASI JADWAL PRODI INFORMATIKA</title>
+    <link rel="icon" type="image/x-icon" href="/frontend/images/favicon.ico">
+    <link rel="stylesheet" href="frontend/libraries/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="frontend/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+            <a href="#" class="navbar-brand">
+                <img src="frontend/images/logotop.png" alt="" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navb">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navb">
+                <ul class="navbar-nav ml-auto mr-3">
+                    <li class="nav-item mx-md-2">
+                        <a href="" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navdrop" data-toggle="dropdown">Jadwal</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-submenu" id="ganjil-submenu">
+                                <a href="#" class="dropdown-item dropdown-toggle" id="ganjil-header">Semester Ganjil</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Semester 1</a>
+                                    <a href="#" class="dropdown-item">Semester 3</a>
+                                    <a href="#" class="dropdown-item">Semester 5</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-submenu" id="genap-submenu">
+                                <a href="#" class="dropdown-item dropdown-toggle" id="genap-header">Semester Genap</a>
+                                <div class="dropdown-menu">
+                                    <a href="/jadwal/semester2.html" class="dropdown-item">Semester 2</a>
+                                    <a href="/jadwal/semester4.html" class="dropdown-item">Semester 4</a>
+                                    <a href="/jadwal/semester6.html" class="dropdown-item">Semester 6</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+
+
+                    <!-- Mobile -->
+                    <form class="form-inline d-sm-block d-md-none">
+                        <a href="backend/login.html" class="btn btn-login my-2 my-sm-0">Masuk</a>
+                    </form>
+
+                    <!-- Desktop -->
+                    <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                        <a href="backend/login.html" class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">Masuk</a>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <header class="text-center">
+        <h1>INFORMASI PENJADWALAN RUANG KELAS PRODI TEKNIK INFORMATIKA</h1>
+    </header>
+
+    <main>
+
+        <div class="container-fluid">
+            <section class="section-room row justify-content-center align-items-center" id="room">
+                <div class="row justify-content-center align-items-center" id="form">
+                    <div class="col-10 text-center mt-5">
+                        <label for="gedung" class="label-gedung">Pilih Gedung</label>
+                    </div>
+                    <div class="col-10 col-md-3 col-lg-5 form-item">
+                        <button type="button" id="gedung-teori" class="form-control">Gedung Teori</button>
+                    </div>
+                    <div class="col-10 col-md-3 col-lg-5 form-item">
+                        <button type="button" id="gedung-lab-ti" class="form-control">Gedung Lab TI</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div class="section-class" id="class">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center section-class-heading">
+                        <h1>Ruangan yang kami miliki:</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-class-content" id="class-content">
+            <div class="section-class-room row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab1 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 1</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-1" style="display: none;"></span>
+                        </div>
+                        <div class="class-buttons mt-auto d-flex justify-content-around">
+                            <a href="details/ti1.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab2 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 2</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-2" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti2.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab3 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 3</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-3" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti3.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab4 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 4</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-4" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti4.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab5 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 5</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-5" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti5.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab6 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 6</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-6" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti6.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab7 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 7</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-7" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti7.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab8 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 8</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-8" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti8.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab9 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 9</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-9" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti9.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-teori">
+                    <div class="card-class card-lab10 text-center d-flex flex-column">
+                        <div class="class-name">KELAS TI 10</div>
+                        <div class="class-location">Gedung Teori</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-10" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti10.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-lab-ti">
+                    <div class="card-class card-lab11 text-center d-flex flex-column">
+                        <div class="class-name">LAB TI 11</div>
+                        <div class="class-location">Gedung Lab TI</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-11" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti11.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-lab-ti">
+                    <div class="card-class card-lab12 text-center d-flex flex-column">
+                        <div class="class-name">LAB TI 12</div>
+                        <div class="class-location">Gedung Lab TI</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-12" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti12.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-lab-ti">
+                    <div class="card-class card-lab13 text-center d-flex flex-column">
+                        <div class="class-name">LAB TI 13</div>
+                        <div class="class-location">Gedung Lab TI</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-13" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti13.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 gedung-lab-ti">
+                    <div class="card-class card-lab14 text-center d-flex flex-column">
+                        <div class="class-name">LAB TI 14</div>
+                        <div class="class-location">Gedung Lab TI</div>
+                        <div class="class-status mt-5">
+                            <span class="badge badge-danger" id="status-badge-ti-14" style="display: none;"></span>
+                        </div>
+                        <div class="class-button mt-auto">
+                            <a href="details/ti14.html" class="btn btn-class-details px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="backToTop" title="Kembali ke atas">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </main>
+
+    <footer class="section-footer mt-5">
+        <div class="container pt-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <h5>Tentang Kami :</h5>
+                            <p>Politeknik Negeri Pontianak (POLNEP) merupakan sistem Pendidikan Tinggi jalur profesional
+                                yang menekankan penguasaan dan pengembangan Ilmu Pengetahuan dan Teknologi untuk
+                                mendukung era industrialisasi.</p>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <h5>Hubungi Kami :</h5>
+                            <p>Jl. Jenderal Ahmad Yani, Bansir Laut, Pontianak Tenggara, Kota Pontianak, Kalimantan
+                                Barat
+                                78124</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fa-regular fa-envelope"></i> kampus@polnep.ac.id</li>
+                                <li><i class="fa fa-phone"></i>+62 561 736180</li>
+                                <li><i class="fa-brands fa-whatsapp"></i> +6281256074059</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p><i class="fas fa-copyright"></i> Copyright Polnep</i> 2024 • Made in Pontianak</p>
+        </div>
+    </footer>
+
+    <script src="frontend/libraries/jquery/jquery-3.7.1.min.js"></script>
+    <script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/8296b8046b.js" crossorigin="anonymous"></script>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    updateRoomStatus();
+});
+
+function updateRoomStatus() {
+    // Ambil semua kunci dari localStorage yang diawali dengan "jadwal_"
+    const keys = Object.keys(localStorage).filter(key => key.startsWith('jadwal_'));
+    console.log('Keys from localStorage:', keys); // Debug: Tampilkan semua kunci
+
+    // Ambil waktu saat ini
+    const currentTime = new Date();
+    console.log('Current time:', currentTime); // Debug: Tampilkan waktu saat ini
+
+    // Daftar ID badge yang sudah diproses
+    const processedBadges = new Set();
+
+    // Iterasi setiap kunci dan perbarui status badge
+    keys.forEach(key => {
+        const jadwal = JSON.parse(localStorage.getItem(key));
+        console.log('Schedule item:', jadwal); // Debug: Tampilkan item jadwal
+
+        const { hari, waktu_mulai, waktu_akhir, ruang, mata_kuliah, dosen } = jadwal;
+        console.log(`Processing schedule for room ${ruang} on ${hari}`); // Debug: Menampilkan ruangan dan hari
+
+        // Cek apakah hari saat ini sama dengan hari jadwal
+        if (currentDay() === hari) {
+            const [startHours, startMinutes] = waktu_mulai.split(':').map(Number);
+            const [endHours, endMinutes] = waktu_akhir.split(':').map(Number);
+
+            // Format waktu mulai dan waktu akhir
+            const startTime = new Date(currentTime);
+            const endTime = new Date(currentTime);
+            startTime.setHours(startHours, startMinutes, 0);
+            endTime.setHours(endHours, endMinutes, 0);
+
+            console.log('Start time:', startTime); // Debug: Tampilkan waktu mulai
+            console.log('End time:', endTime); // Debug: Tampilkan waktu akhir
+
+            // Cek jika waktu sekarang berada dalam rentang waktu
+            if (currentTime >= startTime && currentTime <= endTime) {
+                console.log(`Current time is within the range of ${ruang}`); // Debug: Menampilkan jika waktu saat ini dalam rentang waktu
+                
+                // Temukan elemen badge yang sesuai dengan ruang
+                const badgeId = `status-badge-${ruang.replace(/\s+/g, '').toLowerCase()}`;
+                const badge = document.querySelector(`#${badgeId}`);
+                console.log('Badge element:', badge); // Debug: Tampilkan elemen badge
+
+                if (badge) {
+                    badge.style.display = 'block'; // Tampilkan badge
+                    badge.style.backgroundColor = 'red'; // Set warna background badge untuk ruangan digunakan
+                    badge.innerHTML = `Ruangan Digunakan <br> ${mata_kuliah}<br>${dosen}`; // Set teks badge dengan <br> // Set teks badge
+                    processedBadges.add(badgeId); // Tandai badge ini telah diproses
+                }
+            }
+        }
+    });
+
+    // Set badge untuk ruangan yang tidak ada jadwal
+    const allBadges = document.querySelectorAll('.class-status .badge');
+    allBadges.forEach(badge => {
+        const badgeId = badge.id;
+        if (!processedBadges.has(badgeId)) {
+            badge.style.display = 'block'; // Tampilkan badge
+            badge.style.backgroundColor = 'green'; // Set warna background badge untuk ruangan tersedia
+            badge.textContent = 'Ruangan Tersedia'; // Set teks badge
+        }
+    });
+}
+
+function currentDay() {
+    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const today = new Date().getDay();
+    return days[today] || ''; // Mengembalikan nama hari saat ini dalam bahasa Indonesia
+}
+
+
+
+
+        document.getElementById('gedung-teori').addEventListener('click', function () {
+            selectBuilding('1', this);
+        });
+
+        document.getElementById('gedung-lab-ti').addEventListener('click', function () {
+            selectBuilding('2', this);
+        });
+
+        function selectBuilding(selectedValue, element) {
+            // Remove the selected class from both buttons
+            document.getElementById('gedung-teori').classList.remove('selected-button');
+            document.getElementById('gedung-lab-ti').classList.remove('selected-button');
+
+            // Add the selected class to the clicked button
+            element.classList.add('selected-button');
+
+            // Filter the rooms
+            filterRoomsByGedung(selectedValue);
+        }
+
+        function filterRoomsByGedung(selectedValue) {
+            var teoriRooms = document.querySelectorAll('.gedung-teori');
+            var labRooms = document.querySelectorAll('.gedung-lab-ti');
+
+            if (selectedValue === '1') { // Gedung Teori
+                teoriRooms.forEach(function (room) {
+                    room.classList.remove('hidden');
+                });
+                labRooms.forEach(function (room) {
+                    room.classList.add('hidden');
+                });
+            } else if (selectedValue === '2') { // Gedung Lab TI
+                teoriRooms.forEach(function (room) {
+                    room.classList.add('hidden');
+                });
+                labRooms.forEach(function (room) {
+                    room.classList.remove('hidden');
+                });
+            } else { // Pilih Gedung (atau nilai lain)
+                teoriRooms.forEach(function (room) {
+                    room.classList.remove('hidden');
+                });
+                labRooms.forEach(function (room) {
+                    room.classList.remove('hidden');
+                });
+            }
+        }
+
+        // Tampilkan tombol ketika pengguna menggulir ke bawah 20px dari atas dokumen
+        window.onscroll = function () {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+        }
+
+        // Fungsi untuk smooth scroll
+        function smoothScrollToTop(duration) {
+            // Ambil posisi scroll saat ini
+            const start = window.pageYOffset;
+            const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+            function scroll() {
+                const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, start, -start, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(scroll);
+            }
+
+            // Fungsi easing
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(scroll);
+        }
+
+        // Ketika tombol diklik, gulir ke atas dengan smooth
+        document.getElementById("backToTop").addEventListener("click", function (e) {
+            e.preventDefault();
+            smoothScrollToTop(1000); // 1000ms = 1 detik untuk durasi animasi
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+    // Tentukan semester saat ini (ganjil atau genap)
+    const semesterGanjil = false; // Ganti dengan logika untuk menentukan semester saat ini
+
+    // Ambil elemen submenu
+    const ganjilSubmenu = document.getElementById('ganjil-submenu');
+    const genapSubmenu = document.getElementById('genap-submenu');
+
+    // Aktifkan submenu sesuai dengan semester saat ini
+    if (semesterGanjil) {
+        ganjilSubmenu.querySelector('.dropdown-toggle').classList.remove('disabled');
+        ganjilSubmenu.querySelectorAll('.dropdown-item').forEach(item => item.classList.remove('disabled'));
+        genapSubmenu.querySelector('.dropdown-toggle').classList.add('disabled');
+        genapSubmenu.querySelectorAll('.dropdown-item').forEach(item => item.classList.add('disabled'));
+    } else {
+        ganjilSubmenu.querySelector('.dropdown-toggle').classList.add('disabled');
+        ganjilSubmenu.querySelectorAll('.dropdown-item').forEach(item => item.classList.add('disabled'));
+        genapSubmenu.querySelector('.dropdown-toggle').classList.remove('disabled');
+        genapSubmenu.querySelectorAll('.dropdown-item').forEach(item => item.classList.remove('disabled'));
+    }
+});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="..//frontend/images/favicon.ico">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="js/local-storage/user.js"></script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <form action="" id="registerForm">
+      <h1>Register</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Name" id="name" required />
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Username" id="username" required />
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="NIP" id="nip" required />
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" id="password" required />
+        <i class="bx bx-show" id="togglePassword" style="cursor: pointer;"></i>
+      </div>
+      <button type="submit" class="btn">Register</button>
+      <p class="center-text">Sudah Punya Akun ? <a href="login.html">Login</a></p>
+    </form>
+
+
+  </div>
+</body>
+
+<script>
+  document.getElementById('registerForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    // Memanggil fungsi registerUser dari user.js saat form registrasi disubmit
+    registerUser();
+  });
+
+  document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password');
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    this.classList.toggle('bx-show');
+    this.classList.toggle('bx-hide');
+  });
+
+</script>
+
+</html>

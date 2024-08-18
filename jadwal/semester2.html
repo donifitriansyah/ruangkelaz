@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jadwal Semester 2</title>
+    <link rel="icon" type="image/x-icon" href="../frontend/images/favicon.ico">
+    <link rel="stylesheet" href="../frontend/libraries/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="../frontend/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <script src="../backend/js/local-storage/jadwal.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+            <a href="#" class="navbar-brand">
+                <img src="../frontend/images/logotop.png" alt="" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navb">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navb">
+                <ul class="navbar-nav ml-auto mr-3">
+                    <li class="nav-item mx-md-2">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navdrop" data-toggle="dropdown">Jadwal</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-submenu">
+                                <a href="#" class="dropdown-item dropdown-toggle disabled">Semester Ganjil</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item disabled">Semester 1</a>
+                                    <a href="#" class="dropdown-item disabled">Semester 3</a>
+                                    <a href="#" class="dropdown-item disabled">Semester 5</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-submenu">
+                                <a href="#" class="dropdown-item dropdown-toggle">Semester Genap</a>
+                                <div class="dropdown-menu">
+                                    <a href="/jadwal/semester2.html" class="dropdown-item">Semester 2</a>
+                                    <a href="/jadwal/semester4.html" class="dropdown-item">Semester 4</a>
+                                    <a href="/jadwal/semester6.html" class="dropdown-item">Semester 6</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Mobile -->
+                    <form class="form-inline d-sm-block d-md-none">
+                        <a href="../backend/login.html" class="btn btn-login my-2 my-sm-0">Masuk</a>
+                    </form>
+
+                    <!-- Desktop -->
+                    <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                        <a href="../backend/login.html"
+                            class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">Masuk</a>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <header class="text-center">
+        <h1>JADWAL KELAS PRODI TEKNIK INFORMATIKA</h1>
+    </header>
+
+
+    <main>
+
+        <div class="container-fluid">
+            <section class="section-room row justify-content-center align-items-center" id="room">
+
+                <div class="row justify-content-center align-items-center" id="form">
+                    <div class="col-12 col-md-6 col-lg-6 form-item">
+                        <label for="gedung">Pilih Kelas</label>
+                        <select name="gedung" id="gedung" class="form-control">
+                            <option value="0">Pilih Kelas</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 form-item">
+                        <button type="button" id="selectClassButton" class="form-control">Pilih Kelas</button>
+                    </div>
+                </div>
+                
+
+            </section>
+        </div>
+
+        <div class="section-class" id="class">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col text-center section-class-heading">
+                        <h1>Jadwal Kelas:</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-class-content" id="class-content">
+            <div class="row justify-content-center align-items-center">
+                <div class="card card-default col-12 col-md-10 col-lg-10">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="dataTable" class="table table-bordered table-striped table-hover">
+                                <thead class="thead-light">
+                                    <tr class="text-center">
+                                        <th scope="col">Hari</th>
+                                        <th scope="col">Durasi</th>
+                                        <th scope="col">Mata Kuliah</th>
+                                        <th scope="col">Dosen</th>
+                                        <th scope="col">Ruang</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data will be dynamically inserted here by loadData() -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer class="section-footer mt-5">
+        <div class="container pt-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <h5>Tentang Kami :</h5>
+                            <p>Politeknik Negeri Pontianak (POLNEP) merupakan sistem Pendidikan Tinggi jalur profesional
+                                yang menekankan penguasaan dan pengembangan Ilmu Pengetahuan dan Teknologi untuk
+                                mendukung era industrialisasi.</p>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <h5>Hubungi Kami :</h5>
+                            <p>Jl. Jenderal Ahmad Yani, Bansir Laut, Pontianak Tenggara, Kota Pontianak, Kalimantan
+                                Barat
+                                78124</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fa-regular fa-envelope"></i> kampus@polnep.ac.id</li>
+                                <li><i class="fa fa-phone"></i>+62 561 736180</li>
+                                <li><i class="fa-brands fa-whatsapp"></i> +6281256074059</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p><i class="fas fa-copyright"></i> Copyright Polnep</i> 2024 • Made in Pontianak</p>
+        </div>
+    </footer>
+
+
+    <script src="../frontend/libraries/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../frontend/libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/8296b8046b.js" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Initially hide the table
+    const classContent = document.getElementById('class-content');
+    classContent.classList.add('hidden');
+
+    // Event listener for button click
+    document.getElementById('selectClassButton').addEventListener('click', function() {
+        const selectedClass = document.getElementById('gedung').value;
+        if (selectedClass !== '0') {
+            loadData(selectedClass); // Load data based on selected class
+            classContent.classList.remove('hidden'); // Show the table
+        } else {
+            classContent.classList.add('hidden'); // Hide the table if no class is selected
+        }
+    });
+});
+
+function loadData(selectedClass = '0') {
+    const tableBody = document.querySelector('#dataTable tbody');
+    tableBody.innerHTML = ''; // Clear existing table rows
+
+    // Days of the week in order
+    const daysOfWeek = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
+
+    // Create an array to hold the filtered and sorted data
+    let data = [];
+
+    // Loop through all items in localStorage
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('jadwal_')) { // Filter keys
+            const jadwal = JSON.parse(localStorage.getItem(key));
+
+            // Filter by semester 2 and selected class
+            if (jadwal.semester === '2' && (selectedClass === '0' || jadwal.kelas === selectedClass)) {
+                data.push(jadwal);
+            }
+        }
+    }
+
+    // Helper function to convert time to minutes for sorting
+    function timeToMinutes(time) {
+        const [hours, minutes] = time.split(':').map(Number);
+        return hours * 60 + minutes;
+    }
+
+    // Sort data by day of the week and time
+    data.sort((a, b) => {
+        const dayComparison = daysOfWeek.indexOf(a.hari) - daysOfWeek.indexOf(b.hari);
+        if (dayComparison !== 0) {
+            return dayComparison;
+        }
+        return timeToMinutes(a.waktu_mulai) - timeToMinutes(b.waktu_mulai);
+    });
+
+    // Create and append rows to the table
+    data.forEach(jadwal => {
+        const row = document.createElement('tr');
+        row.className = 'text-center';
+
+        row.innerHTML = `
+            <td>${jadwal.hari}</td>
+            <td>${jadwal.waktu_mulai} - ${jadwal.waktu_akhir}</td>
+            <td>${jadwal.mata_kuliah}</td>
+            <td>${jadwal.dosen}</td>
+            <td>${jadwal.ruang}</td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+
+    // Handle the case where no data matches the filter
+    if (data.length === 0) {
+        const row = document.createElement('tr');
+        row.className = 'text-center';
+        row.innerHTML = '<td colspan="5">No data available</td>';
+        tableBody.appendChild(row);
+    }
+}
+
+
+
+
+    </script>
+</body>
+
+</html>
